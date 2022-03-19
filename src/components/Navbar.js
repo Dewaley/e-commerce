@@ -29,7 +29,7 @@ const Navbar = () => {
         <GiHamburgerMenu className='sm:hidden' onClick={() => setOpen(true)} />
       </div>
       <div
-        className={`absolute bg-teal-400 flex flex-col top-0 w-6/12 sm:hidden h-screen transition-right duration-700 ease-linear ${
+        className={`absolute bg-teal-400 flex flex-col top-0 w-3/5 sm:hidden h-screen transition-right duration-700 ease-linear overflow-hidden ${
           open ? 'right-0' : '-right-full'
         }`}
       >

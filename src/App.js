@@ -1,13 +1,11 @@
 import './App.css';
-import Banner from './components/Banner';
-import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
+
 
 function App() {
   return (
     <div className='bg-blue overflow-x-hidden w-screen relative'>
-      <Navbar />
-      <Banner/>
-      ddd
+      <HomePage/>
     </div>
   );
 }
