@@ -3,8 +3,9 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
+    <div className='bg-blue overflow-x-hidden w-screen relative'>
+      <Navbar />
+      ddd
     </div>
   );
 }
