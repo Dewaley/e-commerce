@@ -7,9 +7,13 @@ import Navbar from './components/Navbar';
 function App() {
   const [open, setOpen] = useState(false);
   return (
-    <div className={`bg-blue overflow-x-hidden w-screen relative ${open ? 'overflow-y-hidden h-screen' : null}`}>
-      <Navbar open={open} setOpen={setOpen}/>
-      <HomePage/>
+    <div
+      className={`bg-blue w-screen relative ${
+        open === true ? 'overflow-hidden h-screen' : 'overflow-x-hidden'
+      }`}
+    >
+      <Navbar open={open} setOpen={setOpen} />
+      <HomePage />
     </div>
   );
 }

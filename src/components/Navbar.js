@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { IoLogInOutline } from 'react-icons/io5';
 import { IoCartOutline } from 'react-icons/io5';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 
-const Navbar = (open,setOpen) => {
+const Navbar = ({open, setOpen}) => {
   return (
     <div>
       <div className='flex justify-between py-3 px-4  border-b-teal-400 border-b-2 items-center'>
@@ -28,7 +28,7 @@ const Navbar = (open,setOpen) => {
         <GiHamburgerMenu className='sm:hidden' onClick={() => setOpen(true)} />
       </div>
       <div
-        className={`absolute bg-teal-400 flex flex-col top-0 w-3/5 sm:hidden h-screen transition-right duration-700 ease-linear overflow-hidden ${
+        className={`absolute bg-teal-400 flex flex-col top-0 w-full sm:hidden h-screen transition-right duration-700 ease-linear overflow-hidden ${
           open ? 'right-0' : '-right-full'
         }`}
       >
