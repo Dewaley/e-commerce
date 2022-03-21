@@ -4,8 +4,7 @@ import { IoCartOutline } from 'react-icons/io5';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 
-const Navbar = () => {
-  const [open, setOpen] = useState(false);
+const Navbar = (open,setOpen) => {
   return (
     <div>
       <div className='flex justify-between py-3 px-4  border-b-teal-400 border-b-2 items-center'>
@@ -17,11 +16,11 @@ const Navbar = () => {
           <li>Contact</li>
         </ul>
         <ul className='hidden sm:flex gap-2'>
-          <li className='flex items-center border-black border-2 p-0.5'>
+          <li className='flex items-center border-teal-500 p-1 hover:bg-teal-500 hover:text-white transition-hover duration-500 border-2 rounded'>
             <IoLogInOutline />
             &nbsp; Login
           </li>
-          <li className='flex items-center border-black border-2 p-0.5'>
+          <li className='flex items-center border-teal-500 p-1 hover:bg-teal-500 hover:text-white transition-hover duration-500 border-2 rounded'>
             <IoCartOutline />
             &nbsp;Cart (0)
           </li>
