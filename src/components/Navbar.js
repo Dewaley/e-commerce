@@ -29,7 +29,7 @@ const Navbar = ({open, setOpen}) => {
       </div>
       <div
         className={`absolute bg-teal-400 flex flex-col top-0 w-full sm:hidden h-screen transition-right duration-700 ease-linear overflow-hidden ${
-          open ? 'right-0' : '-right-full'
+          open ? 'right-0 flex' : '-right-full hidden'
         }`}
       >
         <AiOutlineClose

@@ -5,7 +5,6 @@ import { getCategories } from '../config/api';
 const Products = () => {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
-  const [status, setStatus] = useState('');
   const [categories, setCategories] = useState([]);
 
   const fetchProductsAndCategories = async () => {
@@ -22,14 +21,14 @@ const Products = () => {
     fetchProductsAndCategories();
   }, []);
   return (
-    <div className='overflow-hidden w-screen flex flex-col items-center justify-center'>
+    <div className='overflow-hidden w-screen flex flex-col items-center justify-center p-6'>
       <h2 className='w-full text-center border-b-teal-500 border-b-2 text-2xl'>
         Latest Products
       </h2>
       {loading === true ? (
         <div className='mt-2 text-3xl'>Loading...</div>
       ) : (
-        <div>
+        <div className='w-full flex flex-col justify-center items-center overflow-hidden'>
           <div className='mt-2 flex flex-wrap justify-center items-center'>
             <button className='btn rounded capitalize m-1 text-sm p-1 border-2 border-teal-500 hover:bg-teal-500 hover:text-white transition-hover duration-500'>
               All
@@ -44,14 +43,14 @@ const Products = () => {
             ))}
           </div>
           {products.length > 1 && (
-            <div className='my-12 mx-auto px-4 md:px-12 w-screen'>
-              <div className='flex flex-wrap flex-row'>
+            <div className='container my-12 mx-auto px-4 md:px-12'>
+              <div className='flex flex-wrap -mx-1 lg:-mx-4'>
                 {products.map((product) => (
-                  <div className='my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3 '>
+                  <div className='my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3 overflow-hidden '>
                     <article className='overflow-hidden rounded-lg shadow-lg h-auto'>
                       <div className='flex justify-center items-center'>
                         <img
-                          className='block h-96'
+                          className='block h-96 w-full'
                           alt={product.title}
                           src={product.image}
                         />
