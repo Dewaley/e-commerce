@@ -30,13 +30,13 @@ const Products = () => {
       ) : (
         <div className='w-full flex flex-col justify-center items-center overflow-hidden'>
           <div className='mt-2 flex flex-wrap justify-center items-center'>
-            <button className='btn rounded capitalize m-1 text-sm p-1 border-2 border-teal-500 hover:bg-teal-500 hover:text-white transition-hover duration-500'>
+            <button className='rounded capitalize m-1 text-sm p-1 border-2 border-teal-500 hover:bg-teal-500 hover:text-white transition-hover duration-500'>
               All
             </button>
             {categories.map((category, index) => (
               <button
                 key={index}
-                className='btn capitalize mx-0.5 text-sm border-2 rounded border-teal-500 p-1 hover:bg-teal-500 hover:text-white transition-hover duration-500'
+                className='capitalize mx-0.5 text-sm border-2 rounded border-teal-500 p-1 hover:bg-teal-500 hover:text-white transition-hover duration-500'
               >
                 {category}
               </button>
@@ -58,20 +58,17 @@ const Products = () => {
                       <header className='flex items-center justify-between leading-tight p-2 md:p-4'>
                         <h1 className='text-lg'>
                           <p className='no-underline hover:underline text-black'>
-                            Article Title
+                            {product.title.substring(0, 12)}...
                           </p>
                         </h1>
-                        <p className='text-grey-darker text-sm'>11/1/19</p>
+                        <p className='text-grey-darker'>
+                          ${product.price.toFixed(2)}
+                        </p>
                       </header>
-                      <footer className='flex items-center justify-between leading-none p-2 md:p-4'>
-                        <img
-                          alt='Placeholder'
-                          className='block rounded-full'
-                          src='https://picsum.photos/32/32/?random'
-                        />
-                        <p className='ml-2 text-sm'>Author Name</p>
-                        <span className='hidden'>Like</span>
-                        <i className='fa fa-heart'></i>
+                      <footer className='flex items-center justify-center leading-none p-2 md:p-4'>
+                        <p className='capitalize mx-0.5 text-sm border-2 rounded border-teal-500 p-1 hover:bg-teal-500 hover:text-white transition-hover duration-500'>
+                          Buy Now
+                        </p>
                       </footer>
                     </article>
                   </div>
