@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { getSingleProduct } from '../config/api';
 import { AiFillStar } from 'react-icons/ai';
+import { useParams } from 'react-router-dom';
 
-const Product = () => {
+const ProductPage = () => {
+  const {id} = useParams()
   const [product, setProduct] = useState();
   const [loading, setLoading] = useState(true);
   const fetchProduct = async () => {
     setLoading(true);
-    const res = await fetch(getSingleProduct());
+    const res = await fetch(getSingleProduct(id));
     const data = await res.json();
     setProduct(data);
     console.log(data);
@@ -62,4 +64,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default ProductPage;
