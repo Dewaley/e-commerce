@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { getProducts } from '../config/api';
 import { getCategories } from '../config/api';
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 const Products = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -59,7 +59,10 @@ const Products = () => {
                       </div>
                       <header className='flex items-center justify-between leading-tight p-2 md:p-4'>
                         <h1 className='text-lg'>
-                          <p className='no-underline hover:underline text-black' onClick={()=> navigate(`/product/${product.id}`)}>
+                          <p
+                            className='no-underline hover:underline text-black'
+                            onClick={() => navigate(`/product/${product.id}`)}
+                          >
                             {product.title.substring(0, 12)}...
                           </p>
                         </h1>
@@ -68,9 +71,12 @@ const Products = () => {
                         </p>
                       </header>
                       <footer className='flex items-center justify-center leading-none p-2 md:p-4'>
-                        <p className='capitalize mx-0.5 text-sm border-2 rounded border-teal-500 p-1 hover:bg-teal-500 hover:text-white transition-hover duration-500'>
+                        <button
+                          className='capitalize mx-0.5 text-sm border-2 rounded border-teal-500 p-1 hover:bg-teal-500 hover:text-white transition-hover duration-500' 
+                          onClick={() => navigate(`/product/${product.id}`)}
+                        >
                           Buy Now
-                        </p>
+                        </button>
                       </footer>
                     </article>
                   </div>
