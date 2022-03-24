@@ -49,7 +49,7 @@ const Products = () => {
               <div className='flex flex-wrap -mx-1 lg:-mx-4'>
                 {products.map((product) => (
                   <div className='my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3 overflow-hidden '>
-                    <article className='overflow-hidden rounded-lg shadow-lg h-auto'>
+                    <article className='overflow-hidden rounded-lg border-2 border-teal-500 h-auto'>
                       <div className='flex justify-center items-center'>
                         <img
                           className='block h-96 w-full'
