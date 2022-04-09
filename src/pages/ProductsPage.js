@@ -7,43 +7,14 @@ const Products = () => {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
   const [displayedProducts, setDisplayedProducts] = useState([]);
-  const [status, setStatus] = useState('');
 
   const fetchProducts = async () => {
     setLoading(true);
     const res = await fetch(getProducts());
     const data = await res.json();
     setProducts(data);
-    console.log(data);
-    setLoading(false);
     setDisplayedProducts(data);
-  };
-  const filtering = () => {
-    switch (status) {
-      case 'Electronics':
-        setDisplayedProducts(
-          products.filter((product) => product.category === 'electronics')
-        );
-        break;
-      case 'Jewelry':
-        setDisplayedProducts(
-          products.filter((product) => product.category === 'jewelry')
-        );
-        break;
-      case "Men's Clothing":
-        setDisplayedProducts(
-          products.filter((product) => product.category === "men's clothing")
-        );
-        break;
-      case "Women's Clothing":
-        setDisplayedProducts(
-          products.filter((product) => product.category === "women's clothing")
-        );
-        break;
-      default:
-        setDisplayedProducts(products);
-        break;
-    }
+    setLoading(false);
   };
   useEffect(() => {
     fetchProducts();
@@ -54,13 +25,16 @@ const Products = () => {
         Latest Products
       </h2>
       {loading === true ? (
-        <div className='mt-2 text-3xl'>Loading...</div>
+        <div class='loader'>
+          <div class='inner one'></div>
+          <div class='inner two'></div>
+          <div class='inner three'></div>
+        </div>
       ) : (
         <div className='w-full flex flex-col justify-center items-center overflow-hidden'>
           <div className='mt-2 flex flex-wrap justify-center items-center'>
             <button
-              className='rounded capitalize m-1 text-sm p-1 border-2 border-teal-500 hover:bg-teal-500 hover:text-white transition-hover duration-500 btn'
-              value={'All'}
+              className='rounded capitalize m-1 text-sm p-1 border-2 border-teal-500 hover:bg-teal-500 hover:text-white transition-hover duration-500'
               onClick={() => {
                 setDisplayedProducts(products);
               }}
@@ -68,8 +42,7 @@ const Products = () => {
               All
             </button>
             <button
-              className='rounded capitalize m-1 text-sm p-1 border-2 border-teal-500 hover:bg-teal-500 hover:text-white transition-hover duration-500 btn'
-              value={'Electronics'}
+              className='rounded capitalize m-1 text-sm p-1 border-2 border-teal-500 hover:bg-teal-500 hover:text-white transition-hover duration-500'
               onClick={() => {
                 setDisplayedProducts(
                   products.filter(
@@ -81,19 +54,17 @@ const Products = () => {
               Electronics
             </button>
             <button
-              className='rounded capitalize m-1 text-sm p-1 border-2 border-teal-500 hover:bg-teal-500 hover:text-white transition-hover duration-500 btn'
-              value={'Jewelry'}
+              className='rounded capitalize m-1 text-sm p-1 border-2 border-teal-500 hover:bg-teal-500 hover:text-white transition-hover duration-500'
               onClick={() => {
                 setDisplayedProducts(
-                  products.filter((product) => product.category === 'jewelry')
+                  products.filter((product) => product.category === 'jewelery')
                 );
               }}
             >
-              Jewelry
+              Jewelery
             </button>
             <button
-              className='rounded capitalize m-1 text-sm p-1 border-2 border-teal-500 hover:bg-teal-500 hover:text-white transition-hover duration-500 btn'
-              value={"Men's Clothing"}
+              className='rounded capitalize m-1 text-sm p-1 border-2 border-teal-500 hover:bg-teal-500 hover:text-white transition-hover duration-500'
               onClick={() => {
                 setDisplayedProducts(
                   products.filter(
@@ -105,8 +76,7 @@ const Products = () => {
               Men's Clothing
             </button>
             <button
-              className='rounded capitalize m-1 text-sm p-1 border-2 border-teal-500 hover:bg-teal-500 hover:text-white transition-hover duration-500 btn'
-              value={"Women's Clothing"}
+              className='rounded capitalize m-1 text-sm p-1 border-2 border-teal-500 hover:bg-teal-500 hover:text-white transition-hover duration-500'
               onClick={() => {
                 setDisplayedProducts(
                   products.filter(
