@@ -1,20 +1,22 @@
 import React from 'react';
+import { useNavigate,Link } from 'react-router-dom';
 import { IoLogInOutline } from 'react-icons/io5';
 import { IoCartOutline } from 'react-icons/io5';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 
-const Navbar = ({open, setOpen}) => {
+const Navbar = ({ open, setOpen }) => {
+  const navigate = useNavigate();
   return (
     <div>
       <div className='flex justify-between py-3 px-4  border-b-teal-400 border-b-2 items-center'>
         <h1 className='text-2xl'>Shopping</h1>
-        <ul className='hidden sm:flex gap-2 text-xl'>
-          <li>Home</li>
-          <li>Products</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
+        <nav className='hidden sm:flex gap-2 text-xl'>
+          <Link className='cursor-pointer' to='/'>Home</Link>
+          <Link className='cursor-pointer' to='/products'>Products</Link>
+          <Link className='cursor-pointer' to=''>About</Link>
+          <Link className='cursor-pointer' to=''>Contact</Link>
+        </nav>
         <ul className='hidden sm:flex gap-2'>
           <li className='flex items-center border-teal-500 p-1 hover:bg-teal-500 hover:text-white transition-hover duration-500 border-2 rounded'>
             <IoLogInOutline />
@@ -38,7 +40,12 @@ const Navbar = ({open, setOpen}) => {
         />
         <ul className='flex flex-col gap-2 text-xl'>
           <li className='p-2 border-b-2 border-black'>Home</li>
-          <li className='p-2 border-b-2 border-black'>Products</li>
+          <li
+            className='p-2 border-b-2 border-black'
+            onClick={() => navigate('/products')}
+          >
+            Products
+          </li>
           <li className='p-2 border-b-2 border-black'>About</li>
           <li className='p-2 border-b-2 border-black'>Contact</li>
         </ul>

@@ -1,7 +1,8 @@
 import './App.css';
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Product from './components/Product';
+import ProductsPage from './pages/ProductsPage';
+import ProductPage from './pages/ProductPage';
 import HomePage from './pages/HomePage';
 import Navbar from './components/Navbar';
 
@@ -17,7 +18,8 @@ function App() {
         <Navbar open={open} setOpen={setOpen} />
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/product/:id' element={<Product />} />
+          <Route path='/products' element={<ProductsPage />} />
+          <Route path='/product/:id' element={<ProductPage />} />
         </Routes>
       </div>
     </Router>
